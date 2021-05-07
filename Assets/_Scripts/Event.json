@@ -1,0 +1,69 @@
+{
+    "events": [
+        {
+            "id" : 0,
+            "eventTask" : "Turn mixed light off",
+            "nextEventTriggerType" : "CloseDoor",
+            "nextEvent" : 1,
+            "actions" : {
+                "sound" : "?",
+                "lightsMixed" : true,
+                "lightsBaked" : true,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [0],
+                "doors" : [],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : []
+            }
+        },
+
+        {
+            "id" : 1,
+            "eventTask" : "Open the door",
+            "nextEventTriggerType" : "CloseDoor",
+            "nextEvent" : 2,
+            "actions" : {
+                "sound" : "?",
+                "lightsMixed" : false,
+                "lightsBaked" : true,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : []
+            }
+        },
+
+        {
+            "id" : 2,
+            "eventTask" : "Turn lights on",
+            "nextEventTriggerType" : "CloseDoor",
+            "nextEvent" : 0,
+            "actions" : {
+                "sound" : "?",
+                "lightsMixed" : true,
+                "lightsBaked" : false,
+                "closeDoor" : [0],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [0],
+                "doors" : [],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : []
+            }
+        }
+    ]
+}
