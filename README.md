@@ -5,7 +5,6 @@
 O jogador entra em uma simulação onde perdeu a noção de tempo e ficou até mais tarde no escritório em que trabalha. Ele percebe que não se atentou à mensagem de seu chefe avisando para não ultrapassar o limite de tempo e deve correr para sair do prédio. Porém, antes disso, tem de realizar algumas tarefas rapidamente para fechar o local, como desligar as luzes, equipamentos, coletar lixos e arquivos, sendo a lanterna do celular como sua única ajuda.
 
 ## Descrição da mecânica (Core Mechanics / System design)
-Liste seu jogo do ponto de vista da mecânica. Pergunte-se: como funciona? (Ex: Jogo de plataforma - side scroller? Puzzle game? - envolvendo inimigos terrestres e voadores)
 Jogo explorer envolvendo espaço para interagir, como portas, equipamentos eletrônicos, luzes e itens de coleta. Um inimigo terrestre não interagível, apenas pertence à storyline. O jogador deverá interagir com todos elementos dentro desse escopo para concluir as tarefas fornecidas. Cada tarefa e interação com objetos é liberada a partir da conclusão da anterior.
 
 
