@@ -50,7 +50,10 @@ Creditos dos modelos 3D utilizados:
 - "Cement texture" https://quixel.com/megascans/home?category=surface&category=concrete&category=smooth&search=Cement&assetId=uhnlfbvn
 - "Indoor Plant" (https://skfb.ly/6AzWX) by hako is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/).
 - "File Cabinet" https://www.cgtrader.com/free-3d-models/furniture/cabinet/filing-cabinet-low-poly-3d-model
-- 
+
+## Fontes de texto
+Créditos para fonte de texto utilizada:
+- https://www.dafont.com/pt/tentang-nanti.font
 
 ## Interface
 A interface é resumida à interação com o celular através da tecla C, interação com a lanterna através da tecla E e com objetos do espaço através do botão esquerdo mouse. O jogo inicia com as opções de sair e de começar, durante o playtime há um tutorial na esquerda apresentando as possibilidades de interação no jogo e dicas dadas pelo personagem do jogo em forma de legenda. O botão de pause apresenta controles sliders para os volumes do jogo e sensibilidade do mouse, e botão para sair e voltar.
