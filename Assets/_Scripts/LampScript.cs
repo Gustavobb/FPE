@@ -16,6 +16,7 @@ public class LampScript : MonoBehaviour
 
     protected void ChangeEvent() 
     {
+        if (GameManagerScript.activeEvent.actions.mantainLights) return; 
         if (Mode == lampMode.Mixed) SetLampMode(GameManagerScript.activeEvent.actions.lightsMixed);
         else if (Mode == lampMode.Baked) SetLampMode(GameManagerScript.activeEvent.actions.lightsBaked);
     }

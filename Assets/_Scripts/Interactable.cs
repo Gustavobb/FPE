@@ -13,7 +13,7 @@ public class Interactable : MonoBehaviour
         GameManagerScript.eventChanged += ChangeEvent;
     }
 
-    public virtual void Interact() {}
+    public virtual void Interact() { GetComponent<AudioSource>().Play(); }
     public virtual void DoneInteract() { hasInteracted = false; }
     protected virtual void ChangeEvent() {}
     protected virtual void TriggerCond() {}

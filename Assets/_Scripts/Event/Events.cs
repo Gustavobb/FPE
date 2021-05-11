@@ -7,6 +7,7 @@ public class Events
 {
     public int id;
     public string eventTask;
+    public string tutorialText;
     public string nextEventTriggerType;
     public int nextEvent;
     public Actions actions;

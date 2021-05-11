@@ -2,34 +2,15 @@
     "events": [
         {
             "id" : 0,
-            "eventTask" : "Turn mixed light off",
-            "nextEventTriggerType" : "CloseDoor",
+            "eventTask" : "Today work got me stuck for hours. I think I'm the only one here",
+            "tutorialText" : "WASD to move\nSHIFT to run\nMouse to look\nLeft Click to interact\nESC to pause",
+            "nextEventTriggerType" : "Time9",
             "nextEvent" : 1,
             "actions" : {
                 "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : true,
                 "lightsMixed" : true,
-                "lightsBaked" : true,
-                "closeDoor" : [],
-                "creepAnimation" : "?"
-            },
-
-            "activePawns" : {
-                "switchs" : [0],
-                "doors" : [],
-                "trash" : [],
-                "pcs" : [],
-                "tvs" : []
-            }
-        },
-
-        {
-            "id" : 1,
-            "eventTask" : "Open the door",
-            "nextEventTriggerType" : "CloseDoor",
-            "nextEvent" : 2,
-            "actions" : {
-                "sound" : "?",
-                "lightsMixed" : false,
                 "lightsBaked" : true,
                 "closeDoor" : [],
                 "creepAnimation" : "?"
@@ -37,32 +18,524 @@
 
             "activePawns" : {
                 "switchs" : [],
-                "doors" : [0],
+                "doors" : [],
                 "trash" : [],
                 "pcs" : [],
-                "tvs" : []
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 1,
+            "eventTask" : "Better check my cellphone",
+            "tutorialText" : "Press C to open/close your cellphone",
+            "nextEventTriggerType" : "CellPhone",
+            "nextEvent" : 2,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : true,
+                "lightsMixed" : true,
+                "lightsBaked" : true,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": true
             }
         },
 
         {
             "id" : 2,
-            "eventTask" : "Turn lights on",
-            "nextEventTriggerType" : "CloseDoor",
-            "nextEvent" : 0,
+            "eventTask" : "Oh crap, I'm late. Let me start turning off the pc then",
+            "tutorialText" : "Left Click on the PC case",
+            "nextEventTriggerType" : "PcOff",
+            "nextEvent" : 3,
             "actions" : {
                 "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : true,
                 "lightsMixed" : true,
-                "lightsBaked" : false,
+                "lightsBaked" : true,
+                "closeDoor" : [0],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [],
+                "trash" : [],
+                "pcs" : [0],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 3,
+            "eventTask" : "Perhaps I should see if the server is running ok in the server room",
+            "tutorialText" : "Open the door and search for the server",
+            "nextEventTriggerType" : "Server",
+            "nextEvent" : 4,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : true,
+                "lightsMixed" : true,
+                "lightsBaked" : true,
+                "closeDoor" : [0],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 3],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": true,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 4,
+            "eventTask" : "Glad I checked that. Now I just need to find that book boss left me",
+            "tutorialText" : "Search for the book",
+            "nextEventTriggerType" : "Binder",
+            "nextEvent" : 5,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : true,
+                "lightsMixed" : true,
+                "lightsBaked" : true,
+                "closeDoor" : [0],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 2, 3],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": true,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 5,
+            "eventTask" : "I can't believe there're still people that drop litter. I need to clean all the trash I can find",
+            "tutorialText" : "Search for:\nBanana Peels\nHot dog\nCrumpled papers\nAnd throw them in the trashes",
+            "nextEventTriggerType" : "Binder",
+            "nextEvent" : 6,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : true,
+                "lightsMixed" : true,
+                "lightsBaked" : true,
+                "closeDoor" : [0],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 1, 2, 3],
+                "trash" : [0, 1, 2, 3, 4, 5],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 6,
+            "eventTask" : "I guess that's all. Just have to turn off the lights now. I'll start with my office",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "Mixed",
+            "nextEvent" : 7,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : true,
+                "lightsMixed" : true,
+                "lightsBaked" : true,
                 "closeDoor" : [0],
                 "creepAnimation" : "?"
             },
 
             "activePawns" : {
                 "switchs" : [0],
-                "doors" : [],
+                "doors" : [0, 1, 2, 3],
                 "trash" : [],
                 "pcs" : [],
-                "tvs" : []
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 7,
+            "eventTask" : "I think the main switch is near the elevator.",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "Baked",
+            "nextEvent" : 8,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : false,
+                "lightsMixed" : false,
+                "lightsBaked" : true,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [1],
+                "doors" : [0, 1, 2, 3],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 8,
+            "eventTask" : "Oh no. I forgot that there are still some eletronics on. Let me turn this lights on again first.",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "Baked",
+            "nextEvent" : 9,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : false,
+                "lightsMixed" : false,
+                "lightsBaked" : false,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [1],
+                "doors" : [0, 1, 2, 3],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 9,
+            "eventTask" : "Hm, strange, maybe is the fuse box. Anyway, I don't have time for that now. Good thing I have my cellphone to light the way. I need to turn the radio off",
+            "tutorialText" : "Press E to turn cellphone flashlight on/off",
+            "nextEventTriggerType" : "Radio",
+            "nextEvent" : 10,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : true,
+                "lightsMixed" : true,
+                "lightsBaked" : true,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 1, 2, 3],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": true,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 10,
+            "eventTask" : "Ok. Some Tv's are on",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "TV",
+            "nextEvent" :11,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "?",
+                "mantainLights" : true,
+                "lightsMixed" : true,
+                "lightsBaked" : true,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 1, 2, 3],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [0, 1],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 11,
+            "eventTask" : "What? I just turned off the radio... I don't have much time left, let me worry about turning the remaining pcs off",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "RadioOn",
+            "nextEvent" : 12,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "Squeak",
+                "mantainLights" : true,
+                "lightsMixed" : true,
+                "lightsBaked" : true,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 1, 2, 3],
+                "trash" : [],
+                "pcs" : [1, 2, 3, 4],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 12,
+            "eventTask" : "OK, time to try the radio again",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "RadioOn",
+            "nextEvent" : 13,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "",
+                "mantainLights" : true,
+                "lightsMixed" : true,
+                "lightsBaked" : true,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 1, 2, 3],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": true,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 13,
+            "eventTask" : "Crap! Why is the light in my office on? I want to leave but I can't leave the light like this. I need to go there",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "RadioOn",
+            "nextEvent" : 14,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "",
+                "mantainLights" : false,
+                "lightsMixed" : true,
+                "lightsBaked" : false,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [0],
+                "doors" : [0, 1, 2, 3],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 14,
+            "eventTask" : "Huh? What was that?... Well, I don't have a choice. I need to go eletric power room or the elevator won't work.",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "Time6",
+            "nextEvent" : 15,
+            "actions" : {
+                "sound" : "creepySound",
+                "radioSound" : "",
+                "mantainLights" : false,
+                "lightsMixed" : false,
+                "lightsBaked" : false,
+                "closeDoor" : [],
+                "creepAnimation" : "Take01"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 1, 2, 3, 4],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 15,
+            "eventTask" : "Ok, now I need to fix the fuse box",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "fuse",
+            "nextEvent" : 16,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "",
+                "mantainLights" : false,
+                "lightsMixed" : false,
+                "lightsBaked" : false,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 1, 2, 3, 4],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : true
+            }
+        },
+
+        {
+            "id" : 16,
+            "eventTask" : "What the...",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "Time3",
+            "nextEvent" : 17,
+            "actions" : {
+                "sound" : "creepyPiano",
+                "radioSound" : "",
+                "mantainLights" : false,
+                "lightsMixed" : false,
+                "lightsBaked" : false,
+                "closeDoor" : [],
+                "creepAnimation" : "Take02"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 1, 2, 3, 4],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
+            }
+        },
+
+        {
+            "id" : 17,
+            "eventTask" : "What the...",
+            "tutorialText" : "",
+            "nextEventTriggerType" : "fuse",
+            "nextEvent" : 0,
+            "actions" : {
+                "sound" : "?",
+                "radioSound" : "",
+                "mantainLights" : false,
+                "lightsMixed" : false,
+                "lightsBaked" : false,
+                "closeDoor" : [],
+                "creepAnimation" : "?"
+            },
+
+            "activePawns" : {
+                "switchs" : [],
+                "doors" : [0, 1, 2, 3, 4],
+                "trash" : [],
+                "pcs" : [],
+                "tvs" : [],
+                "server": false,
+                "binder": false,
+                "radio": false,
+                "cellphone": false,
+                "fuseBox" : false
             }
         }
     ]

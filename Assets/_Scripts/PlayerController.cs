@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float mouseSensitivity = 100f, speed = 10f, gravity = -10f, playerViewDistance = 10f, runSpeed = 5f;
+    public float speed = 10f, gravity = -10f, playerViewDistance = 10f, runSpeed = 5f;
     public new Camera camera;
-    public GameObject dotWhite, dotRed, flashLight;
+    public GameObject dotWhite, dotRed, flashLight, holdPoint;
+
+    public AudioSource walkSound;
+    public LayerMask layerMask;
     Animator animator;
     CharacterController controller;
     float mouseX, mouseY, rotationX;
+    float mouseSensitivity = 300f;
     [HideInInspector]
     public Vector3 direction, velocity;
     StateMachine stateMachine;
@@ -33,15 +37,21 @@ public class PlayerController : MonoBehaviour
         stateMachine.Initialize(idleState);
         rotationX = 0f;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
     {
-        HandlePlayerMovement();
+        if (GameManagerScript.activeEvent.id < 16) HandlePlayerMovement();
+
         HandleLookMovement();
         HandleRayCast();
         stateMachine.CurrentState.LogicUpdate();
-        if (Input.GetKeyDown(KeyCode.E)) flashLight.SetActive(!flashLight.activeSelf);
+        if (Input.GetKeyDown(KeyCode.E)) 
+        {
+            GetComponent<AudioSource>().Play();
+            flashLight.SetActive(!flashLight.activeSelf);
+        }
     }
 
     void HandleLookMovement()
@@ -69,7 +79,7 @@ public class PlayerController : MonoBehaviour
     void HandleRayCast()
     {
         RaycastHit hit;
-        if(Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit, playerViewDistance))
+        if(Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit, playerViewDistance, layerMask))
         {
             Interactable interactable = hit.collider.gameObject.GetComponent<Interactable>();
 
@@ -91,5 +101,16 @@ public class PlayerController : MonoBehaviour
             dotRed.SetActive(false);
             dotWhite.SetActive(true);
         }
+    }
+
+    public void SetMouseSensitivity(float sliderValue)
+    {
+        mouseSensitivity = sliderValue;
+    }
+
+    void PlayWalkSound()
+    {
+        walkSound.pitch = Random.Range(.9f, 1.2f);
+        walkSound.Play();
     }
 }

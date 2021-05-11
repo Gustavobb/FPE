@@ -7,6 +7,7 @@ public class SwitchScript : Interactable
     public Animator animator;
     public override void Interact()
     {
+        base.Interact();
         hasInteracted = true;
         animator.SetTrigger("Press");
     }
@@ -18,13 +19,17 @@ public class SwitchScript : Interactable
         for (int i = 0; i < GameManagerScript.activeEvent.activePawns.switchs.Length; i++)
             if (GameManagerScript.activeEvent.activePawns.switchs[i] == id) 
             {
-                canInteract = true;
                 GameManagerScript.nextEventTrigger += TriggerCond;
+                canInteract = true;
             }
     }
 
     protected override void TriggerCond() 
     {
-        if (hasInteracted) GameManagerScript.nextEventTrigger -= TriggerCond;
+        if (hasInteracted) 
+        {
+            GameManagerScript.nextEventTrigger -= TriggerCond;
+            canInteract = false;
+        }
     }
 }

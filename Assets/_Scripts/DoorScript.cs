@@ -5,9 +5,9 @@ using UnityEngine;
 public class DoorScript : Interactable
 {
     public Animator animator;
-
     public override void Interact()
     {
+        base.Interact();
         hasInteracted = !hasInteracted;
         animator.SetBool("Open", hasInteracted);
     }
@@ -19,13 +19,6 @@ public class DoorScript : Interactable
             if (GameManagerScript.activeEvent.activePawns.doors[i] == id) 
             {
                 canInteract = true;
-                GameManagerScript.nextEventTrigger += TriggerCond;
-                Debug.Log(id);
             }
-    }
-
-    protected override void TriggerCond() 
-    {
-        if (hasInteracted) GameManagerScript.nextEventTrigger -= TriggerCond;
     }
 }

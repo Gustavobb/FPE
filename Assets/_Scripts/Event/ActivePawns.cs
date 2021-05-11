@@ -10,4 +10,9 @@ public class ActivePawns
     public int[] trash;
     public int[] pcs;
     public int[] tvs;
+    public bool server;
+    public bool binder;
+    public bool radio;
+    public bool cellphone;
+    public bool fuseBox;
 }

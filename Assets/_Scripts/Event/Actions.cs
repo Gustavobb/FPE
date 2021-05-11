@@ -6,6 +6,8 @@ using UnityEngine;
 public class Actions
 {
     public string sound;
+    public string radioSound;
+    public bool mantainLights;
     public bool lightsMixed;
     public bool lightsBaked;
     public int[] closeDoor;
