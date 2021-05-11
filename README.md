@@ -74,7 +74,7 @@ Tela de início -> tela do jogo -> tela do fim
 ## Personagens
 Descreva um resumo de como será o personagem principal do seu jogo, personagens secundários, inimigos e chefes.
 - Jogador Robert: Jogador principal, gerente do escritório.
-- Mr. Brown: Chefe do escritório, inimigo participante de um culto secreto.
+- Mr. Brown: Chefe do escritório.
 - Muswarg: inimigo, criatura sem braços.
 
 ## Cronograma e Escopo
