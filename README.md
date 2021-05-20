@@ -100,7 +100,7 @@ Descreva um resumo de como será o personagem principal do seu jogo, personagens
 
 ## Definições Gerais
 - Gênero: Terror
-- Público Alvo: Acima de 12
+- Público Alvo: Acima de 12 anos. Para aqueles que desejam uma experiência com adrenalina e terror.
 
 
 
